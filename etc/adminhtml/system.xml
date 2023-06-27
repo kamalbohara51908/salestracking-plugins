@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the moebel.de Einrichten & Wohnen AG License
+ * that is available through the world-wide-web at this URL:
+ * https://sales1.moebel.de/licenses/magento.txt
+*/
+/**
+ * @category   Sales Tracking
+ * @package    Moebel_Salestracking
+ * @subpackage etc
+ * @author     moebel.de <salestracking@moebel.de>
+ * @copyright  Copyright (c) 2020 moebel.de Einrichten & Wohnen AG (https://www.moebel.de)
+ * @link       https://www.moebel.de
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="moebel" translate="label" sortOrder="10">
+            <label>Moebel Sales Tracking</label>
+        </tab>
+        <section id="setting" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Configration</label>
+            <tab>moebel</tab>
+            <resource>Moebel_Salestracking::setting</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Modul aktivieren</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Schlüssel</label>
+                </field>
+                <field id="attribution" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Attribution</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="attribution_value" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Attributionswert</label>
+                </field>
+                <field id="umsatz_in_ver" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Umsatz inkludiert Versandkosten</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tracking_type" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Trigger-Typ (Referer oder Parameter)</label>
+                    <source_model>Moebel\Salestracking\Model\Config\Type</source_model>
+                </field>
+                <field id="tracking_name" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Trigger Domain oder Parameter Name</label>
+                </field>
+                <field id="tracking_value" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Wert des Trigger Parameters</label>
+                    <depends>
+                        <field id="tracking_type">2</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

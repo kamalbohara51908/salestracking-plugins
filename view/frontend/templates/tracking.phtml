@@ -1,0 +1,34 @@
+<?php
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the moebel.de Einrichten & Wohnen AG License
+ * that is available through the world-wide-web at this URL:
+ * https://sales1.moebel.de/licenses/magento.txt
+ */
+/**
+ * @category   Sales Tracking
+ * @package    Moebel_Salestracking
+ * @subpackage etc
+ * @author     moebel.de <salestracking@moebel.de>
+ * @copyright  Copyright (c) 2020 moebel.de Einrichten & Wohnen AG (https://www.moebel.de)
+ * @link       https://www.moebel.de
+ */
+?>
+<?php if($block->isModuleEnable() && $block->getSalesTrackingStatus()){?>
+	<script type="text/javascript">
+		var _mo = _mo || [];
+		_mo.push(['_key', '<?php echo $block->getKey();?>']);
+		_mo.push(['_umsatz','<?php echo $block->getUmsatz();?>']);
+		_mo.push(['_versandkosten','<?php echo number_format($block->getOrder()->getShippingAmount(),2);?>']);
+		_mo.push(['_artikelliste','<?php echo $block->getSkuOfOrderItem();?>']); 
+		_mo.push(['_attribution','<?php echo $block->getAttribution(); ?>']);
+		_mo.push(['_attributionsanteil','<?php echo $block->getAttributionValue(); ?>']);  
+	   (function() {
+		   var mo = document.createElement('script'); mo.type = 'text/javascript'; mo.async = true;
+		   mo.src='https://sales1.moebel.de/asyndic.js';
+		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mo, s);
+		 })();
+	</script>
+
+<?php } ?>

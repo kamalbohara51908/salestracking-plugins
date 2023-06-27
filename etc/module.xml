@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the moebel.de Einrichten & Wohnen AG License
+ * that is available through the world-wide-web at this URL:
+ * https://sales1.moebel.de/licenses/magento.txt
+ */
+
+/**
+ * @category   Sales Tracking
+ * @package    Moebel_Salestracking
+ * @subpackage etc
+ * @author     moebel.de <salestracking@moebel.de>
+ * @copyright  Copyright (c) 2020 moebel.de Einrichten & Wohnen AG (https://www.moebel.de)
+ * @link       https://www.moebel.de
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    <module name="Moebel_Salestracking" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Backend"/>             
+            <module name="Magento_Quote"/>
+            <module name="Magento_Checkout"/>
+            <module name="Magento_Sales"/>
+        </sequence>
+	</module>
+</config>

@@ -1,0 +1,23 @@
+{
+    "name": "k2stech/salestracking-plugins",
+    "description": "sales tracking code for Magento 2",
+    "type": "magento2-module",
+    "version": "1.5.3",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Möbel",
+            "email": "salestracking@moebel.de",
+            "homepage": "https://www.moebel.de",
+            "role": "Technical Support"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Moebel\\Salestracking\\": ""
+        }
+    }
+}
